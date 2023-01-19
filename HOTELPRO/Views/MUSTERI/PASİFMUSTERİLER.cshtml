@@ -1,0 +1,47 @@
+﻿@using HOTELPRO.Models.Entity
+@model List<TBLMUSTERI>
+@{
+    ViewBag.Title = "PASİFMUSTERİLER";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+<div class="container">
+    <h2>PASİF MÜŞTERİLER</h2>
+
+    <div class="btn-group btn-group-justified">
+        <a href="/MUSTERI/TUMMUSTERILER" class="btn btn-primary">TÜM MÜŞTERİLER</a>
+        <a href="/MUSTERI/AKTİFMUSTERİLER" class="btn btn-primary">AKTİF MÜŞTERİLER</a>
+        <a href="/MUSTERI/PASİFMUSTERİLER" class="btn btn-primary">PASİF MÜŞTERİLER</a>
+    </div>
+</div>
+<br />
+<table class="table table-bordered table-hover table-striped  ">
+    <tr class="info">
+        <th>MÜŞTERİ NO</th>
+        <th>MÜŞTERİ KİMLİK/PASAPORT</th>
+        <th>MÜŞTERİ ADI</th>
+        <th>MÜŞTERİ SOYADI</th>
+        <th>ÜLKE</th>
+        <th>DURUM</th>
+
+    </tr>
+    <tbody>
+        @foreach (var musteri in Model)
+        {
+            <tr>
+                <th>@musteri.musteriId</th>
+                <td>@musteri.musteriKimlik</td>
+                <td>@musteri.musteriAd</td>
+                <td>@musteri.musteriSoyad</td>
+                <td>@musteri.musteriUlke</td>
+                <td>@musteri.musteriDurum</td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>
+<a href="/MUSTERI/YeniKayit/" class="btn btn-block btn-info">YENİ MÜŞTERİ EKLE</a>
+

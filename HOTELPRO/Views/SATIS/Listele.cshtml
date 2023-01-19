@@ -1,0 +1,37 @@
+﻿@using HOTELPRO.Models.Entity
+@model List<TBLSATIS>
+
+@{
+    ViewBag.Title = "Listele";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<h2>Yapılan Satışlar</h2>
+<table class="table table-bordered table-hover table-striped  ">
+    <tr class="info">
+        <th>SATIŞ NO</th>
+        <th>DANIŞMAN</th>
+        <th>MÜŞTERİ</th>
+        <th>ODA</th>
+        <th>GÜN</th>
+        <th>FİYAT</th>
+
+
+    </tr>
+    <tbody>
+
+        @foreach (var sat in Model)
+        {
+            <tr>
+                <th>@sat.satısId</th>
+                <td>@sat.danısan</td>
+                <td>@sat.musteri</td>
+                <td>@sat.oda</td>
+                <td>@sat.gun</td>
+                <td>@sat.fiyat</td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>
+

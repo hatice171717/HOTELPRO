@@ -1,0 +1,21 @@
+﻿@using HOTELPRO.Models.Entity
+@model List<TBLMUSTERI>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="container">
+    <h2>MÜŞTERİLER</h2>
+
+    <div class="btn-group btn-group-justified">
+        <a href="/MUSTERI/TUMMUSTERILER" class="btn btn-primary">TÜM MÜŞTERİLER</a>
+        <a href="/MUSTERI/AKTİFMUSTERİLER" class="btn btn-primary">AKTİF MÜŞTERİLER</a>
+        <a href="/MUSTERI/PASİFMUSTERİLER" class="btn btn-primary">PASİF MÜŞTERİLER</a>
+    </div>
+</div>
+<br />
+
+
+

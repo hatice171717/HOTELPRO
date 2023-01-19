@@ -1,0 +1,28 @@
+﻿@model HOTELPRO.Models.Entity.TBLDANISMAN
+@{
+    ViewBag.Title = "DanismanGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Danışman Bilgilerini Güncelle</h2>
+
+@using (Html.BeginForm("Guncelle", "DANISMAN", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.danismanId, labelText: "Danışman No:")
+    @Html.TextBoxFor(m => m.danismanId, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(m => m.danismanTc, labelText: "Danışman TC:")
+    @Html.TextBoxFor(m => m.danismanTc, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(m => m.danismanAd, labelText: "Danışman Adı:")
+    @Html.TextBoxFor(m => m.danismanAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.danismanSoyad, labelText: "Danışman No:")
+    @Html.TextBoxFor(m => m.danismanSoyad, new { @class = "form-control" })
+    <br />
+    </div>
+    <div>
+        <button class="btn btn-block btn-info">DANIŞMAN BİLGİLERİNİ GÜNCELLE</button>
+    </div>
+}

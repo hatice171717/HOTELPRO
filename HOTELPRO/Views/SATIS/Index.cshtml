@@ -1,0 +1,67 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>SATIŞ</h2>
+
+<form method="post" class="form-group">
+    <div>
+        <label>Danışman</label>
+        <input type="text" class="form-control" name="danısan" />
+        <br />
+        <label>Müşteri</label>
+        <input type="text" class="form-control" name="musteri" />
+        <br />
+        <label>Oda</label>
+        <input type="text" class="form-control" name="oda" />
+        <br />
+        <label>Gün</label>
+        <input type="text" class="form-control" name="gun" />
+        <br />
+        <label>Fiyat</label>
+        <input type="text" class="form-control" name="fiyat" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info btn-block">Ekle</button>
+    </div>
+</form>
+<a href="/SATIS/Listele/" class="btn btn-default btn-block">Yapılan Satışlar</a>
+<br />
+<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#Modal1">
+    Odalar Hakkında Bilgi
+</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Oda Türleri</h2>
+            </div>
+            <form method="post" action="/SATIS/Listele">
+                <div class="modal-body">
+                    <ul>
+                        <li><b>Single room:</b> Tek kişilik odalardır. İçerisinde tek kişilik ya da bir büyük çift kişilik yatak bulunur.<br /><br /></li>
+                        <li><b>Double room:</b> İki kişi konaklayabilir. İçerisinde iki ayrı tek kişilik (twin bed) veya bir büyük çift kişilik (french bed) yatak bulunur.<br /><br /></li>
+                        <li><b>Triple room:</b> Üç kişilik odalardır. Üç tek kişilik veya bir çift ve iki tek kişilik yatak ile konumlandırılabilir.<br /><br /></li>
+                        <li><b>Quad room:</b> Dört kişinin konaklayabileceği odalardır. Bir çift kişilik ve iki tek kişilik yatak bulunur.<br /><br /></li>
+                        <li><b>Suite room:</b> Bir yatak odası ve bir oturma odasından meydana gelir.<br /><br /></li>
+                        <li><b>Junior suite:</b> Bir yatak odası ve bir oturma odasından meydana gelir. Standart odadan daha büyük ve suit odadan daha az lüks ve küçük durumdaki odalardır.<br /><br /></li>
+                        <li><b>Dubleks oda:</b> Genellikle ilk kat oturma odası ve üst kat yatak odası olacak şekildedir. Konaklayacak maksimum kişi sayısı her tesis için odanın genişliğine göre değişiklik gösterebilir.<br /><br /></li>
+                        <li><b>Connection room:</b> Bağlantılı oda anlamına gelir. Koridora çıkmadan bir odadan bir odaya geçiş yapılabilecek şekilde tasarlanmış iki odadan meydana gelir.<br /><br /></li>
+                        <li><b>Family room:</b> Aile odaları standart odalardan daha büyük ölçüde çocuklu ailelerin konaklayabileceği odalardır. İçerisinde bir french bed ve çocuklar için ranza veya açılabilir kanepe bulunur.<br /><br /></li>
+                        <li>
+                            <b>Corner room:</b> Köşe odalar otel katlarının köşelerinde bulunan junior suite olarak da değerlendirilebilecek odalardır.<br /><br />
+                        </li>
+                        <li><b>Engelli odası:</b> Engelli misafirlerin rahat bir şekilde konaklayabilmesi için dizayn edilen odalardır.<br /><br /></li>
+                        <li><b>King Suite:</b> Oturma odası, yatak odası, mutfak ve banyodan oluşan oldukça geniş lüks odalardır. İçerisinde misafirlere televizyon, bilgisayar, telefon, faks gibi hizmetler de sunulur.<br /><br /></li>
+                    </ul>
+                    <br />
+
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Çıkış</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

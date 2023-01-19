@@ -1,0 +1,38 @@
+﻿@model HOTELPRO.Models.Entity.TBLMUSTERI
+@{
+    /**/
+
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Müşteri Bilgilerini Güncelle</h2>
+
+@using (Html.BeginForm("Guncelle", "MUSTERI", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.musteriId, labelText: "Müşteri No:")
+        @Html.TextBoxFor(m => m.musteriId, new { @class = "form-control", @readonly = "readonly" })
+        <br />
+        @Html.LabelFor(m => m.musteriKimlik, labelText: "Müşteri Kimlik Bilgileri:")
+        @Html.TextBoxFor(m => m.musteriKimlik, new { @class = "form-control", @readonly = "readonly" })
+        <br />
+        @Html.LabelFor(m => m.musteriAd, labelText: "Müşteri Adı:")
+        @Html.TextBoxFor(m => m.musteriAd, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.musteriSoyad, labelText: "Müşteri Soyadı:")
+        @Html.TextBoxFor(m => m.musteriSoyad, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.musteriUlke, labelText: "Ülke:")
+        @Html.TextBoxFor(m => m.musteriUlke, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.musteriDurum, labelText: "Müşteri Durum:")
+        @Html.TextBoxFor(m => m.musteriDurum, new { @class = "form-control" })
+        <br />
+    </div>
+    <div>
+        <button class="btn btn-block btn-info">MÜŞTERİ BİLGİLERİNİ GÜNCELLE</button>
+    </div>
+}
+
+

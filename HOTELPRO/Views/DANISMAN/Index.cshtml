@@ -1,0 +1,42 @@
+﻿@using HOTELPRO.Models.Entity
+
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h1>DANIŞMANLAR</h1>
+<table class="table table-bordered table-hover table-striped ">
+    <thead>
+        <tr class="info">
+            <th>DANIŞMAN NO</th>
+            <th>DANIŞMAN TC</th>
+            <th>DANIŞMAN ADI</th>
+            <th>DANIŞMAN SOYADI</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var danısman in Model)
+        {
+            <tr>
+                <th>@danısman.danismanId</th>
+                <td>@danısman.danismanTc</td>
+                <td>@danısman.danismanAd</td>
+                <td>@danısman.danismanSoyad</td>
+                <td>@Html.ActionLink("SİL", "Sil", new { id = danısman.danismanId }, new { @class = "btn btn-danger", onclick = "return confirm('Danışmanı Silmek İstediğinize Emin Misiniz?')" })</td>
+                @*<td><a href="/DANISMAN/SIL/@danısman.danismanId" class="btn btn-danger">SİL</a></td>*@
+                <td><a href="/DANISMAN/DanismanGetir/@danısman.danismanId" class="btn btn-success">GÜNCELLE</a></td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>
+<a href="/DANISMAN/YeniKayit/" class="btn btn-block btn-info">YENİ DANIŞMAN EKLE</a>
+

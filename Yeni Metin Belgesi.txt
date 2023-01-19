@@ -1,0 +1,62 @@
+
+            //Linq sorgusu yapıldı.
+            var deger = from x in db.TBLSATIS
+                        select new
+                        {
+                            x.satısId,
+                            x.TBLDANISMAN.danismanAd,
+                            x.TBLDANISMAN.danismanSoyad,
+                            x.TBLMUSTERI.musteriAd,
+                            x.TBLMUSTERI.musteriSoyad,
+                            x.TBLODA.odaAd,
+                            x.gun,
+                            x.fiyat
+                        };
+
+            return View(deger.ToList());
+
+
+**************
+@model HOTELPRO.Models.Entity.TBLSATIS
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<button type="button" data-toggle="modal" data-target="#Modal1" class="btn btn-default navbar-btn"><strong>SATIŞ</strong></button>
+
+<div name="satıs">
+    <div class="modal" id="Modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Satış Yapma Ekranı</h2>
+                </div>
+                <form method="post" action="/SATIS/YENISATIS">
+                    <div class="modal-body">
+                        <label>DANIŞAN</label>
+                        @Html.DropDownListFor(m => m.TBLDANISMAN.danismanId, (List<SelectListItem>)ViewBag.danısan, new { @class = "form-control" })
+                        <br />
+                        <label>MÜŞTERİ</label>
+                        @Html.DropDownListFor(m => m.TBLMUSTERI.musteriId, (List<SelectListItem>)ViewBag.musteri, new { @class = "form-control" })
+
+                        <br />
+
+                        <label>ODA</label>
+                        @Html.DropDownListFor(m => m.TBLODA.odaId, (List<SelectListItem>)ViewBag.oda, new { @class = "form-control" })
+
+                        <br />
+                        <label>KALINACAK GÜN</label>
+                        @Html.TextBoxFor(m => m.gun, new { @class = "form-control" })
+                        <label>Fiyat</label>
+                        @Html.TextBoxFor(m => m.fiyat, new { @class = "form-control" })
+
+                        <button type="submit" class="btn btn-info">Satış İşlemini Yap</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Vazgeç</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,35 @@
+﻿@model HOTELPRO.Models.Entity.TBLODA
+@{
+    ViewBag.Title = "OdaGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Oda Bilgilerini Güncelle</h2>
+
+@using (Html.BeginForm("Guncelle", "ODA", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.odaId, labelText: "Oda No:")
+        @Html.TextBoxFor(m => m.odaId, new { @class = "form-control", @readonly = "readonly" })
+        <br />
+        @Html.LabelFor(m => m.odaAd, labelText: "Oda Ad:")
+        @Html.TextBoxFor(m => m.odaAd, new { @class = "form-control", @readonly = "readonly" })
+        <br />
+        @Html.LabelFor(m => m.odaKat, labelText: "Oda Katı:")
+        @Html.TextBoxFor(m => m.odaKat, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.odaTur, labelText: "Oda Türü:")
+        @Html.TextBoxFor(m => m.odaTur, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.odaFiyat, labelText: "Oda Fiyatı:")
+        @Html.TextBoxFor(m => m.odaFiyat, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.odaDurum, labelText: "Oda Durum:")
+        @Html.TextBoxFor(m => m.odaDurum, new { @class = "form-control" })
+        <br />
+    </div>
+    <div>
+        <button class="btn btn-block btn-info">ODA BİLGİLERİNİ GÜNCELLE</button>
+    </div>
+}
+

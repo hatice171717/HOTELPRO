@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "YeniKayit";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<h2>Oda Kayıt</h2>
+<form method="post" class="form-group">
+    <div>
+        <label>Oda Adı</label>
+        <input type="text" class="form-control" name="odaAd" />
+        <br />
+        <label>Oda Katı</label>
+        <input type="text" class="form-control" name="odaKat" />
+        <br />
+        <label>Oda Türü</label>
+        <input type="text" class="form-control" name="odaTur" />
+        <br />
+        <label>Oda Fiyat</label>
+        <input type="text" class="form-control" name="odaFiyat" />
+        <br />
+        <label>Oda Durum</label>
+        <input type="text" class="form-control" name="odaDurum" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info btn-block">Ekle</button>
+    </div>
+</form>
+
+

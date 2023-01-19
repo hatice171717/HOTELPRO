@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "YeniKayit";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<h2>Müşteri Kayıt</h2>
+<form method="post" class="form-group">
+    <div>
+        <label>Müşteri Kimlik No</label>
+        <input type="text" class="form-control" name="musteriKimlik" />
+        <br />
+        <label>Müşteri Adı</label>
+        <input type="text" class="form-control" name="musteriAd" />
+        <br />
+        <label>Müşteri Soyadı</label>
+        <input type="text" class="form-control" name="musteriSoyad" />
+        <br />
+        <label>Ülke</label>
+        <input type="text" class="form-control" name="musteriUlke" />
+        <br />
+        <label>Müşteri Durum</label>
+        <input type="text" class="form-control" name="musteriDurum" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info btn-block">Ekle</button>
+    </div>
+</form>
+
+

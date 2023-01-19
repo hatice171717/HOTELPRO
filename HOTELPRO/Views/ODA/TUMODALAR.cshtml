@@ -1,0 +1,50 @@
+﻿@using HOTELPRO.Models.Entity
+@model List<TBLODA>
+@{
+    ViewBag.Title = "TUMODALAR";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<div class="container">
+    <h2>ODALAR</h2>
+
+    <div class="btn-group btn-group-justified">
+        <a href="/ODA/TUMODALAR" class="btn btn-primary">TÜM ODALAR</a>
+        <a href="/ODA/BOSODALAR" class="btn btn-primary">BOŞ ODALAR</a>
+        <a href="/ODA/DOLUODALAR" class="btn btn-primary">DOLU ODALAR</a>
+    </div>
+</div>
+<br />
+<table class="table table-bordered table-hover table-striped  ">
+    <tr class="info">
+        <th>ODA NO</th>
+        <th>ODA ADI</th>
+        <th>ODA KAT</th>
+        <th>ODA TÜRÜ</th>
+        <th>ODA FİYATI</th>
+        <th>ODA DURUMU</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach (var oda in Model)
+        {
+            <tr>
+                <th>@oda.odaId</th>
+                <td>@oda.odaAd</td>
+                <td>@oda.odaKat</td>
+                <td>@oda.odaTur</td>
+                <td>@oda.odaFiyat</td>
+                <td>@oda.odaDurum</td>
+                <td>@Html.ActionLink("SİL", "Sil", new { id = oda.odaId }, new { @class = "btn btn-danger", onclick = "return confirm('Danışmanı Silmek İstediğinize Emin Misiniz?')" })</td>
+                <td><a href="/ODA/OdaGetir/@oda.odaId" class="btn btn-success">GÜNCELLE</a></td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>
+<a href="/ODA/YeniKayit/" class="btn btn-block btn-info">YENİ ODA EKLE</a>
+
+
